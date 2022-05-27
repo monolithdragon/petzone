@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { BannerContainer, BannerContent, BannerDescription, BannerImage, BannerTitle } from '../../styles/banner';
+import { BannerContainer, BannerContent, BannerDescription, BannerImage, BannerShopButton, BannerTitle } from '../../styles/banner';
 
 const Banner = () => {
     return (
@@ -21,6 +21,9 @@ const Banner = () => {
                     Sed laboriosam ad nostrum veritatis fugit repellat illo in dolorem maxime amet, 
                     atque officia doloremque et, ab nemo quod incidunt dolorum facere labore debitis velit blanditiis?
                 </BannerDescription>
+                <BannerShopButton color='primary'>
+                    Show Now
+                </BannerShopButton>
             </BannerContent>
         </BannerContainer>
     );

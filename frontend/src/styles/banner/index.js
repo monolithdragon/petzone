@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
 import { Colors } from '../theme';
 import '@fontsource/montez';
@@ -20,7 +20,6 @@ export const BannerContent = styled(Box)(() => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     maxWidth: 420,
     padding: '30px',
 }));
@@ -54,6 +53,25 @@ export const BannerImage = styled('img')(({ src, theme }) => ({
     [theme.breakpoints.down('sm')]: {
         width: '320px',
         height: '300px'
+    }
+}));
+
+export const BannerShopButton = styled(Button, {
+    shouldForwardProp: (prop) => prop !== 'color',
+    name: 'ShopButton',
+    slot: 'Root',
+    overridesResolver: (props, styles) => [
+        styles.root,
+        props.color === 'primary' && styles.primary,
+        props.color === 'secondary' && styles.secondary
+    ]
+})(({ theme }) => ({
+    padding: '20px 0',
+    fontWeight: 'bold',
+    fontSize: '16px', 
+    [theme.breakpoints.down('sm')]: {
+        padding: '10px 0',
+        fontSize: '14px'
     }
 }));
 
